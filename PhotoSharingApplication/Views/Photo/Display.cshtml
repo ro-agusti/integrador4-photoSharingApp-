@@ -1,0 +1,22 @@
+﻿@model PhotoSharingApplication.Models.Photo
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+        <h2>"@Model.Title"</h2>
+        <img class="photo-metadata" src="@Url.Action("GetImage", "Photo",new { id = Model.PhotoID })" />
+        <p>
+            @Html.DisplayFor(model => model.Description)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => model.UserName):
+            @Html.DisplayFor(model => model.UserName)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => model.CreatedDate):
+            @Html.DisplayFor(model => model.CreatedDate)
+        </p>
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
