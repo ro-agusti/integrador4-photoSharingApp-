@@ -9,6 +9,7 @@ using PhotoSharingApplication.Models;
 
 namespace PhotoSharingApplication.Controllers
 {
+    [HandleError(View = "Error")]
     [ValueReporter]
     public class PhotoController : Controller
     {
@@ -111,6 +112,11 @@ select p).Take(number).ToList();
             {
                 return null;
             }
+        }
+
+        public ActionResult SlideShow()
+        {
+            throw new NotImplementedException("The Slideshow action is not yet ready.");
         }
     }
 }
